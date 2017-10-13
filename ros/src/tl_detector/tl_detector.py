@@ -226,7 +226,8 @@ class TLDetector(object):
             return TrafficLight.UNKNOWN
 
         # original 100, 140
-        zoomed = cv2.resize(cv_image[a:b, c:d], (40, 90))
+        # zoomed = cv2.resize(cv_image[a:b, c:d], (40, 90))
+        zoomed = cv2.resize(cv_image[a:b, c:d], (450, 720))
 
         state = self.light_classifier.get_classification(zoomed)
         self.image_zoomed.publish(self.bridge.cv2_to_imgmsg(zoomed, 'bgr8'))

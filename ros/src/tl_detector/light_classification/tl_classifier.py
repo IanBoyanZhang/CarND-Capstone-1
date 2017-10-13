@@ -40,6 +40,9 @@ class TLClassifier(object):
         # scale and center
         image = (image/255) -.5
 
+        image = image.resize(90, 40)
+        image = image[::5, ::8, :]
+
         # reshape as array
         height = 90
         width = 40
